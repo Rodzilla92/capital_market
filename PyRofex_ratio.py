@@ -18,7 +18,7 @@ datetime.datetime.now(hora_arg).strftime('%d-%m-%Y')
 ##############
 gc = gspread.service_account(filename= '########')
 sh = gc.open_by_url('#####')
-AL_GD = sh.worksheet("Datos")
+AL_GD = sh.worksheet("#####")
 
 
 ##############
@@ -86,16 +86,12 @@ def ratio(r1,r2):
   ratio1 = prices[prices.index == r1]
   ratio2 = prices[prices.index == r2]
   merge = pd.merge(ratio1, ratio2, on='Time', how='outer')
-  #merge
-
 
   if merge.isna().any().any():
       merge.iloc[0] = merge.iloc[0].fillna(merge.iloc[1])
       merge = merge.drop(1)
-      #return(merge)
       merge
   else:
-    #return(merge)
     merge
 
 
