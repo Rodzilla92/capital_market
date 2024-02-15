@@ -141,8 +141,13 @@ while True:
       print('DING DING DING')
       break
   else:
-    ratio1 = ratio("MERV - XMEV - GD30 - 48hs", "MERV - XMEV - AL30 - 48hs")
-    AL_GD.update(f'A{x}',ratio1.values.tolist())
-
-    x = x + 1
+    try:
+      ratio1 = ratio("MERV - XMEV - GD30 - 48hs", "MERV - XMEV - AL30 - 48hs")
+      AL_GD.update(f'A{x}',ratio1.values.tolist())
+      
+      x = x + 1
+    
+    except:
+      time.sleep(5)
+      
   time.sleep(5)
