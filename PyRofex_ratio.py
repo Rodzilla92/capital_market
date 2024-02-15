@@ -16,7 +16,7 @@ datetime.datetime.now(hora_arg).strftime('%d-%m-%Y')
 ##############
 ### SHEETS ###
 ##############
-gc = gspread.service_account(filename= '########')
+gc = gspread.service_account(filename= r'########')
 sh = gc.open_by_url('#####')
 AL_GD = sh.worksheet("#####")
 
